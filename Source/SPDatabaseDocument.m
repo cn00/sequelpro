@@ -3901,6 +3901,7 @@ static BOOL isOSAtLeast10_14;
 		
 		windowTitle = [NSMutableString string];
 		tabTitle = [NSMutableString string];
+		[tabTitle appendFormat:@"%@:", [self connectionID]];
 
 		// Add the path to the window title
 		[windowTitle appendString:pathName];
