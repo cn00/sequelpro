@@ -3946,6 +3946,11 @@ static BOOL isOSAtLeast10_14;
 	
 	if ([parentWindowController selectedTableDocument] == self) {
 		[parentWindow setTitle:windowTitle];
+		if (@available(macOS 11.0, *)) {
+			[parentWindow setToolbarStyle:NSWindowToolbarStyleExpanded];
+		} else {
+				// Fallback on earlier versions
+		}
 	}
 
 	// If the sender wasn't the window controller, update other tabs in this window
